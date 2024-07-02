@@ -29,8 +29,8 @@ class EngineersRecyclerViewAdapter(
             binding.root.setOnClickListener {
                 onClick(engineer)
             }
-            //TODO - set profile picture
-//            statusIcon.setDrawable(item.icon)
+               //TODO - set profile picture
+        //      statusIcon.setDrawable(item.icon)
         }
     }
 }

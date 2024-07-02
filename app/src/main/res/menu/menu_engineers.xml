@@ -11,14 +11,17 @@
             <item
                 android:id="@+id/action_years"
                 android:title="@string/engineers_menu_years"
+                android:visibility="visible"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_coffees"
                 android:title="@string/engineers_menu_coffees"
+                android:visibility="visible"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_bugs"
                 android:title="@string/engineers_menu_bugs"
+                android:visibility="visible"
                 app:showAsAction="never" />
         </menu>
 

@@ -49,7 +49,7 @@ object MockData {
         Engineer(
             name = "Stefan",
             role = "Senior dev",
-            defaultImageName = "",
+            defaultImageName = ".",
             quickStats = QuickStats(years = 7, coffees = 9000, bugs = 700),
             questions = listOf(
                 Question.One(Answer(text = "6am", index = 0)),

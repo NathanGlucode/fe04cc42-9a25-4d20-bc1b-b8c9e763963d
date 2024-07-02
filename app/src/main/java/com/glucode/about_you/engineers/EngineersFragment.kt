@@ -1,7 +1,12 @@
 package com.glucode.about_you.engineers
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -47,6 +52,7 @@ class EngineersFragment : Fragment() {
     private fun goToAbout(engineer: Engineer) {
         val bundle = Bundle().apply {
             putString("name", engineer.name)
+            putString("role", engineer.role)
         }
         findNavController().navigate(R.id.action_engineersFragment_to_aboutFragment, bundle)
     }
