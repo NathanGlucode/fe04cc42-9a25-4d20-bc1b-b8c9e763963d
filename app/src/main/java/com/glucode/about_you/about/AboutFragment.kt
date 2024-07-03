@@ -30,16 +30,20 @@ class AboutFragment: Fragment() {
     private fun setProfileCard(){
         val engineerName = arguments?.getString("name")
         val engineerRole = arguments?.getString("role")
-        val name = MockData.engineers.first { it.name==engineerName }
+        val engineer = MockData.engineers.first { it.name==engineerName }
 
         val  profileView = ProfileCardView(requireContext())
         profileView.name = engineerName
         profileView.role = engineerRole
+
+
+        profileView.years = engineer.quickStats.years.toString()
+        profileView.coffees = engineer.quickStats.coffees.toString()
+        profileView.bugs = engineer.quickStats.bugs.toString()
         binding.container.addView(profileView)
 
-
-
     }
+
 
     private fun setUpQuestions() {
         val engineerName = arguments?.getString("name")

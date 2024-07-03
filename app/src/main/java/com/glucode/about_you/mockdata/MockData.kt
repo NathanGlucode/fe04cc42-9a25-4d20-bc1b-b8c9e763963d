@@ -8,7 +8,7 @@ import com.glucode.about_you.engineers.models.QuickStats
 object MockData {
     val engineers = listOf(
         Engineer(
-            name = "Reenen",
+            name = "Reenan",
             role = "Dev manager",
             defaultImageName = "",
             quickStats = QuickStats(years = 6, coffees = 5400, bugs = 1800),

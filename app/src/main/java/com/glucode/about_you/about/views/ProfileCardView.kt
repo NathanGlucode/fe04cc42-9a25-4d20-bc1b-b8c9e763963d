@@ -27,6 +27,21 @@ class ProfileCardView @JvmOverloads constructor(
             field = value
             binding.role.text = value
         }
+    var years: String? = null
+        set(value) {
+            field = value
+            binding.actionYears.text= value
+        }
+    var coffees: String? = null
+        set(value) {
+            field = value
+            binding.actionCoffees.text = value
+        }
+    var bugs: String? = null
+        set(value) {
+            field = value
+            binding.actionBugs.text = value
+        }
 
     init {
         radius = resources.getDimension(R.dimen.corner_radius_normal)
