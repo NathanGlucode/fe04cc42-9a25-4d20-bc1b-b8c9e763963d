@@ -14,16 +14,16 @@
 
         <ImageView
             android:id="@+id/profile_card"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_margin="@dimen/margin_normal"
             android:src="@drawable/ic_person"
-            android:visibility="visible"
+            android:contentDescription="image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white"
-            tools:ignore="ContentDescription" />
+            />
+
 
 
         <TextView
@@ -59,22 +59,20 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/stats_container"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profile_card"
             app:layout_constraintTop_toBottomOf="@id/role">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/action_years"
@@ -87,7 +85,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/action_coffees"
                     app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toBottomOf="@id/YearsLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/YearsLabel" />
 
                 <TextView
                     android:id="@+id/action_coffees"
@@ -100,8 +98,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/action_bugs"
                     app:layout_constraintStart_toEndOf="@id/action_years"
-                    app:layout_constraintTop_toBottomOf="@+id/coffeesLabel"
-                  />
+                    app:layout_constraintTop_toBottomOf="@+id/coffeesLabel" />
 
                 <TextView
                     android:id="@+id/action_bugs"
@@ -114,7 +111,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/action_coffees"
-                    app:layout_constraintTop_toBottomOf="@id/bugsLabel"/>
+                    app:layout_constraintTop_toBottomOf="@id/bugsLabel" />
 
 
                 <TextView
@@ -150,13 +147,11 @@
                     android:text="Bugs"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@id/action_bugs"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/action_coffees"
-                    />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </androidx.cardview.widget.CardView>

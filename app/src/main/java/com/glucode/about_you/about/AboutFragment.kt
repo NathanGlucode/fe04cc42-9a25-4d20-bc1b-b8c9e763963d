@@ -1,6 +1,8 @@
 package com.glucode.about_you.about
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import com.glucode.about_you.mockdata.MockData
 
 class AboutFragment: Fragment() {
     private lateinit var binding: FragmentAboutBinding
+   // private lateinit var profileCardBinding: ViewProfileCardBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,11 +43,17 @@ class AboutFragment: Fragment() {
         profileView.years = engineer.quickStats.years.toString()
         profileView.coffees = engineer.quickStats.coffees.toString()
         profileView.bugs = engineer.quickStats.bugs.toString()
+
+        profileView.profileCardClick = View.OnClickListener { selectProfilePicture() }
+        profileView.profileImageUri = engineer.defaultImageName
         binding.container.addView(profileView)
 
     }
 
-
+    fun selectProfilePicture(){
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+        startActivityForResult(intent, 100)
+    }
     private fun setUpQuestions() {
         val engineerName = arguments?.getString("name")
         val engineer = MockData.engineers.first { it.name == engineerName }
@@ -57,5 +66,16 @@ class AboutFragment: Fragment() {
 
             binding.container.addView(questionView)
         }
+
+        }
+
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (requestCode == 100  && resultCode == -1) {
+                binding.container.removeAllViews()
+
+                    MockData.engineers.find { it.name == arguments?.getString("name") }?.defaultImageName = data?.data
+                   setProfileCard()
+                }
+            }
     }
-}
